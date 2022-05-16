@@ -1,0 +1,27 @@
+server:
+  # 项目端口
+  port: 80
+
+spring:
+  application:
+    # 项目名
+    name: yunle_take_out
+  datasource:
+    # druid 连接池配置
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/takeout?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: admin
+
+mybatis-plus:
+  configuration:
+    # 大小写驼峰映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+projectpath:
+  path: D:\img\
