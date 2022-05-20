@@ -23,6 +23,5 @@ mybatis-plus:
     db-config:
       id-type: ASSIGN_ID
 
-# 项目路径
 projectpath:
   path: D:\img\
