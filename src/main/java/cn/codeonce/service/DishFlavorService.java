@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 /**
  * codeonce
  * DishFlavorService
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/10
  */
 public interface DishFlavorService extends IService<DishFlavor> {

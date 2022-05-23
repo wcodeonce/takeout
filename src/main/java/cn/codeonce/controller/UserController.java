@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * codeonce
  * UserController
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/12
  */
 @Slf4j
@@ -30,6 +32,8 @@ public class UserController {
     @Autowired
     private UserService service;
 
+    @Autowired
+    private StringRedisTemplate redis;
 
     /**
      * 发送手机短信验证码
@@ -55,7 +59,10 @@ public class UserController {
         // SMSUtils.sendMessage("温柔且无情个人网", "1400537", phone, code);
 
         // 将生成的验证码保存到Session
-        session.setAttribute(phone, code);
+        // session.setAttribute(phone, code);
+
+        // 将生成的验证码缓存到 Redis 中，并且设置有效期为 5 分钟
+        redis.opsForValue().set(phone, code, 5, TimeUnit.MINUTES);
 
         return R.success("手机验证码短信发送成功!");
     }
@@ -64,7 +71,7 @@ public class UserController {
     /**
      * 移动端用户登录
      *
-     * @param map    用户登录信息
+     * @param map     用户登录信息
      * @param session session存储用户信息
      * @return 操作响应
      */
@@ -81,9 +88,12 @@ public class UserController {
         log.info("验证码=>{}", code);
 
         // 从 Session 中获取保存的验证码
-        Object codeInSession = session.getAttribute(phone);
+        // Object codeInSession = session.getAttribute(phone);
 
-        log.info("Session验证码=>{}", codeInSession.toString());
+        // 从 Redis 中获取缓存的验证码
+        String codeInSession = redis.opsForValue().get(phone);
+
+        log.info("Session验证码=>{}", codeInSession);
 
         // 进行验证码的比对（页面提交的验证码和Session中保存的验证码对比）
         if (codeInSession == null || !codeInSession.equals(code)) return R.error("用户登录失败!");
@@ -106,6 +116,10 @@ public class UserController {
         }
         // 将用户id放到session中
         session.setAttribute("user", user.getId());
+
+        // 如果用户登录成功，删除 Redis 中缓存的验证码
+        redis.delete(phone);
+
         // 用户登录成功
         return R.success(user);
 

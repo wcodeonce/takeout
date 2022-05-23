@@ -3,14 +3,13 @@ package cn.codeonce.service;
 import cn.codeonce.dto.SetmealDto;
 import cn.codeonce.pojo.Setmeal;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.List;
 
 /**
  * codeonce
  * SetmealService
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/11
  */
 public interface SetmealService extends IService<Setmeal> {

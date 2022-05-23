@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 /**
  * codeonce
  * SetmealDishService
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/11
  */
 public interface SetmealDishService extends IService<SetmealDish> {

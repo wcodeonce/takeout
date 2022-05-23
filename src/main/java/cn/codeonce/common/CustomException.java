@@ -3,7 +3,7 @@ package cn.codeonce.common;
 /**
  * codeonce
  * CustomException 自定义业务异常
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/10
  */
 public class CustomException extends RuntimeException {

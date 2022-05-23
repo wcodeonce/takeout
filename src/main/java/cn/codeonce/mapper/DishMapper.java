@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * codeonce
  * DishMapper
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/9
  */
 @Mapper

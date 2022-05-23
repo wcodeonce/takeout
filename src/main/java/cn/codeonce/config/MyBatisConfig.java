@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * codeonce
  * MyBatisConfig 分页插件
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/9
  */
 @Configuration

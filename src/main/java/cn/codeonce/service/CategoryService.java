@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 /**
  * codeonce
  * CategoryService
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/10
  */
 public interface CategoryService extends IService<Category> {

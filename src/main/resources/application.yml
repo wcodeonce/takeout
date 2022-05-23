@@ -5,7 +5,7 @@ server:
 spring:
   application:
     # 项目名
-    name: yunle_take_out
+    name: take_out
   datasource:
     # druid 连接池配置
     druid:
@@ -13,6 +13,18 @@ spring:
       url: jdbc:mysql://localhost:3306/takeout?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: admin
+  redis:
+    host: localhost
+    port: 6379
+    # password: 123456
+    database: 0         # 操作的是 0 号数据库
+    jedis:
+      # Redis 连接池配置
+      pool:
+        max-active: 8   # 最大连接数
+        max-wait: 1ms   # 连接池最大阻塞等待时间
+        max-idle: 4     # 连接池中的最大空闲连接
+        min-idle: 0     # 连接池中的最小空闲连接
 
 mybatis-plus:
   configuration:

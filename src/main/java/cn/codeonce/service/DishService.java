@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * codeonce
  * DIshService
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/9
  */
 public interface DishService extends IService<Dish> {

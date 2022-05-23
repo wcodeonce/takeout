@@ -12,7 +12,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 /**
  * codeonce
  * GlobalExceptionHandler
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/9
  */
 @ControllerAdvice(annotations = {RestController.class, Controller.class})

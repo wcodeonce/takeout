@@ -3,7 +3,7 @@ package cn.codeonce.filter;
 /**
  * codeonce
  * LoginCheckFilter
- * Yunle_TakeOut
+ * TakeOut
  * 2022/5/8
  */
 
@@ -36,7 +36,7 @@ public class LoginCheckFilter implements Filter {
         // 获取本次请求的URL地址
         String requestURI = request.getRequestURI();
 
-        log.info("拦截到请求：{}", requestURI);
+        // log.info("拦截到请求：{}", requestURI);
 
         // 定义不需要处理的请求路径
         String[] urls = new String[]{"/employee/login", "/employee/logout", "/backend/**", "/front/**", "/common/**", "/user/sendMsg",// 移动端发送短信
