@@ -118,7 +118,7 @@ public class DishController {
         log.info("新增菜品信息=>{}" + dishDto.toString());
 
         // 执行保存操作
-        dishService.saveWithFlavor(dishDto);
+        dishService.updateWithFlavor(dishDto);
 
         // 清理所有菜品的缓存数据
         // Set keys = redisTemplate.keys("dish_*");

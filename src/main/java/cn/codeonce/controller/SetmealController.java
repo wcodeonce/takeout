@@ -1,6 +1,7 @@
 package cn.codeonce.controller;
 
 import cn.codeonce.common.R;
+import cn.codeonce.dto.DishDto;
 import cn.codeonce.dto.SetmealDto;
 import cn.codeonce.pojo.Category;
 import cn.codeonce.pojo.Setmeal;
@@ -102,6 +103,21 @@ public class SetmealController {
 
 
     /**
+     * 根据ID查询对应的套餐信息
+     * @param id 套餐id
+     * @return 套餐信息
+     */
+    @GetMapping("/{id}")
+    public R<SetmealDto> getDish(@PathVariable Long id) {
+        // 执行查询
+        SetmealDto setmealDto = setmealService.getByIdWithDish(id);
+
+        // 返回数据
+        return R.success(setmealDto);
+    }
+
+
+    /**
      * 新增套餐信息
      *
      * @param setmealDto 套餐信息
@@ -159,6 +175,32 @@ public class SetmealController {
         setmealService.update(wrapper);
 
         return R.success("更改套餐状态成功!");
+    }
+
+
+    /**
+     * 更新套餐数据
+     *
+     * @param setmealDto 要更新套餐数据
+     * @return 操作响应
+     */
+    @PutMapping
+    public R<String> update(@RequestBody SetmealDto setmealDto) {
+        log.info("更新菜品信息=>{}", setmealDto.toString());
+
+        // 执行保存操作
+        setmealService.updateWithDish(setmealDto);
+
+        // 清理所有菜品的缓存数据
+        // Set keys = redisTemplate.keys("dish_*");
+        // log.info("清理所有的菜品缓存数据=>{}", keys);
+        // redisTemplate.delete(keys);
+
+        // 只清理某个分类下面的菜品缓存数据
+        // String key = "dish_" + setmealDto.getCategoryId() + "_1";
+        // redisTemplate.delete(key);
+
+        return R.success("更新套餐信息成功!");
     }
 
 
