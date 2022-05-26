@@ -82,10 +82,10 @@ public class UserController {
         log.info("登录用户信息=>{}", map.toString());
 
         // 获取手机号
-        String phone = map.get("phone").toString();
+        String phone = map.get("phone");
 
         // 获取验证码
-        String code = map.get("code").toString();
+        String code = map.get("code");
 
         log.info("验证码=>{}", code);
 

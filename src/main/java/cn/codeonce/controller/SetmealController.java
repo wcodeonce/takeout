@@ -1,7 +1,6 @@
 package cn.codeonce.controller;
 
 import cn.codeonce.common.R;
-import cn.codeonce.dto.DishDto;
 import cn.codeonce.dto.SetmealDto;
 import cn.codeonce.pojo.Category;
 import cn.codeonce.pojo.Setmeal;
@@ -106,6 +105,7 @@ public class SetmealController {
 
     /**
      * 根据ID查询对应的套餐信息
+     *
      * @param id 套餐id
      * @return 套餐信息
      */

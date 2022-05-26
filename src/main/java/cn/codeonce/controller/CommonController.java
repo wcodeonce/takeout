@@ -53,7 +53,7 @@ public class CommonController {
         String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
 
         // 使用UUID重新生成文件名称，防止文件名称重复造成的文件覆盖
-        String fileName = UUID.randomUUID().toString() + suffix;
+        String fileName = UUID.randomUUID() + suffix;
 
         // 创建一个目录对象
         File dir = new File(basePath);

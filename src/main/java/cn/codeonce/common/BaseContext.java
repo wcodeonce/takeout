@@ -5,7 +5,7 @@ package cn.codeonce.common;
  * 用于保存和获取当前登录用户的ID
  */
 public class BaseContext {
-    private static ThreadLocal<Long> threadLocal = new ThreadLocal<>();
+    private static final ThreadLocal<Long> threadLocal = new ThreadLocal<>();
 
     /**
      * 获取值

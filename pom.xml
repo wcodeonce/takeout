@@ -10,7 +10,7 @@
     </parent>
     <groupId>cn.codeonce</groupId>
     <artifactId>TakeOut</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>V1.0.1</version>
 
     <properties>
         <java.version>1.8</java.version>
