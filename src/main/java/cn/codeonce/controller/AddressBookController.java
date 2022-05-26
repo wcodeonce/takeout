@@ -6,6 +6,7 @@ import cn.codeonce.pojo.AddressBook;
 import cn.codeonce.service.AddressBookService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ import java.util.List;
  * 地址簿管理
  */
 @Slf4j
+@Api(tags = "地址簿相关接口")
 @RestController
 @RequestMapping("/addressBook")
 public class AddressBookController {

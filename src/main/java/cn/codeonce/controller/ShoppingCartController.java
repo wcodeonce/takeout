@@ -5,6 +5,7 @@ import cn.codeonce.common.R;
 import cn.codeonce.pojo.ShoppingCart;
 import cn.codeonce.service.ShoppingCartService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.List;
  * 2022/5/14
  */
 @Slf4j
+@Api(tags = "购物车相关接口")
 @RestController
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController {

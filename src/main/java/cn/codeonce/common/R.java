@@ -1,5 +1,7 @@
 package cn.codeonce.common;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,19 +14,24 @@ import java.util.Map;
  *
  * @param <T>
  */
+@ApiModel("返回结果")
 @Data
 public class R<T> implements Serializable {
 
     //编码：1成功，0和其它数字为失败
+    @ApiModelProperty("状态")
     private Integer code;
 
     //错误信息
+    @ApiModelProperty("响应信息")
     private String msg;
 
     //数据
+    @ApiModelProperty("数据")
     private T data;
 
     //动态数据
+    @ApiModelProperty("动态数据")
     private Map map = new HashMap();
 
     public static <T> R<T> success(T object) {

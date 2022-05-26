@@ -5,6 +5,7 @@ import cn.codeonce.pojo.User;
 import cn.codeonce.service.UserService;
 import cn.codeonce.utils.ValidateCodeUtils;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import java.util.concurrent.TimeUnit;
  * 2022/5/12
  */
 @Slf4j
+@Api(tags = "用户相关接口")
 @RestController
 @RequestMapping("/user")
 public class UserController {

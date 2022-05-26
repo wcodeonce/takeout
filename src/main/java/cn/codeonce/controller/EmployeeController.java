@@ -5,6 +5,7 @@ import cn.codeonce.pojo.Employee;
 import cn.codeonce.service.EmployeeService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
  * 2022/5/7
  */
 @Slf4j
+@Api(tags = "员工相关接口")
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {

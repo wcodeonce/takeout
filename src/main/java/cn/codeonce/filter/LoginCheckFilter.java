@@ -39,8 +39,18 @@ public class LoginCheckFilter implements Filter {
         // log.info("拦截到请求：{}", requestURI);
 
         // 定义不需要处理的请求路径
-        String[] urls = new String[]{"/employee/login", "/employee/logout", "/backend/**", "/front/**", "/common/**", "/user/sendMsg",// 移动端发送短信
-                "/user/login" // 移动端登录
+        String[] urls = new String[]{
+                "/employee/login",
+                "/employee/logout",
+                "/backend/**",
+                "/front/**",
+                "/common/**",
+                "/user/sendMsg",// 移动端发送短信
+                "/user/login", // 移动端登录
+                "/doc.html",
+                "/webjars/**",
+                "/swagger-resources",
+                "/v2/api-docs"
         };
 
         // 检查用户登录状态

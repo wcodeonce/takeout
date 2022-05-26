@@ -3,6 +3,7 @@ package cn.codeonce.controller;
 import cn.codeonce.common.R;
 import cn.codeonce.pojo.Orders;
 import cn.codeonce.service.OrderService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 2022/5/15
  */
 @Slf4j
+@Api(tags = "订单相关接口")
 @RestController
 @RequestMapping("/order")
 public class OrderController {

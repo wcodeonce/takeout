@@ -1,6 +1,6 @@
 server:
   # 项目端口
-  port: 80
+  port: 8080
 
 spring:
   application:
@@ -40,9 +40,9 @@ spring:
     allow-bean-definition-overriding: true
   # Redis 连接配置
   redis:
-    host: 127.0.0.1
+    host: 81.69.172.84
     port: 6379
-    # password: 123456
+    password: 123456
     database: 0         # 操作的是 0 号数据库
     jedis:
       # Redis 连接池配置

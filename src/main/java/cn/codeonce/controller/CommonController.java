@@ -1,6 +1,7 @@
 package cn.codeonce.controller;
 
 import cn.codeonce.common.R;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ import java.util.UUID;
  * 2022/5/10
  */
 @Slf4j
+@Api(tags = "文件上传接口")
 @RestController
 @RequestMapping("/common")
 public class CommonController {

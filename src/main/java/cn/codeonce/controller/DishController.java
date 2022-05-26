@@ -11,6 +11,7 @@ import cn.codeonce.service.DishService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -30,6 +31,7 @@ import java.util.stream.Collectors;
  * 2022/5/10
  */
 @Slf4j
+@Api(tags = "菜品相关接口")
 @RestController
 @RequestMapping("/dish")
 @SuppressWarnings("all")
